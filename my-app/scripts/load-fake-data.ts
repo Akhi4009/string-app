@@ -9,8 +9,7 @@ async function loadFakeData(numUsers = 10) {
   console.log(`Executing load fake data. Generating ${numUsers} users`);
 
   
- 
-  const client = new Client({
+ const client = new Client({
     user: process.env.POSTGRES_USER,
     host: process.env.POSTGRES_HOST,
     database: process.env.POSTGRES_NAME,
@@ -30,6 +29,20 @@ async function loadFakeData(numUsers = 10) {
       [faker.internet.userName(), 'password', faker.image.avatar()]
       );
     };
+
+    const res= await client.query(`select id from public.users order by created_at desc limit $1`,
+    [numUsers]
+    );
+
+    console.log(res.rows)
+
+    for(const row of res.rows){
+
+      for(let i = 0; i < Math.ceil(Math.random()*50) ; i++){
+        await client.query(`insert into public.posts(user_id,content) values($1, $2)`,
+        [row.id,faker.lorem.sentence()])
+      }
+    }
 
     await client.query("commit")
 
