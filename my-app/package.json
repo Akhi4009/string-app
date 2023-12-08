@@ -2,7 +2,6 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,8 +10,9 @@
     "start1": "tsx scripts/load-fake-data.ts"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@types/pg": "^8.10.9",
-    "dotenv": "^16.3.1",
+    
     "next": "14.0.3",
     "pg": "^8.11.3",
     "react": "^18",
