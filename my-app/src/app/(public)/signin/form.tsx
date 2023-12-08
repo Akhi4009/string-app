@@ -30,10 +30,10 @@ const Form = () => {
   return (
     <>
     <form onSubmit={handleSubmit}
-     className="flex flex-col gap-2 p-5 bg-slate-400 max-w-xs w-full rounded-lg">
+     className="flex flex-col gap-2 p-5 bg-slate-800 max-w-xs w-full rounded-lg">
 
 <div  className="text-center">
-    <h3 className="font-semibold">Sigin In</h3>
+    <h3 className="font-semibold text-white">Sigin In</h3>
 </div>
 <div className="my-3">
     <hr/>
@@ -46,7 +46,7 @@ const Form = () => {
     value={username}
     onChange={(e)=>setUsername(e.target.value)}
     required
-    className="text-block p-2 border border-slate-500 rounded-lg"
+    className="text-block p-2 border border-slate-400 rounded-lg"
     
     />
     </div>
@@ -58,11 +58,11 @@ const Form = () => {
          value={password}
          onChange={(e)=>setPassword(e.target.value)}
          required
-         className="text-block p-2 border border-slate-500 rounded-lg"
+         className="text-block p-2 border border-slate-400 rounded-lg"
          />
         </div>
  <div className="flex flex-col gap-2 ">
-    <button type="submit" className="bg-slate-200 p-3 mt-4  rounded-lg ">LogIn</button>
+    <button type="submit" className="bg-slate-400 p-3 mt-4  rounded-lg ">LogIn</button>
  </div>
     </form>
     </>
