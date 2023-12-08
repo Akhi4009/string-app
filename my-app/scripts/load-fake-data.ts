@@ -20,7 +20,7 @@ async function loadFakeData(numUsers = 10) {
   await client.connect();
   const res = await client.query("select 1");
 
-   console.log(res.command); 
+   console.log(res); 
   await client.end();
 }
 
