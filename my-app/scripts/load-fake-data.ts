@@ -44,6 +44,18 @@ async function loadFakeData(numUsers = 10) {
       }
     }
 
+    for(const row1 of res.rows){
+      for(const row2 of res.rows){
+        if(row1.id!==row2.id && Math.random()>0.5){
+
+          await client.query(`insert into public.follows(user_id, follower_id) values($1, $2)`,
+          [row1.id, row2.id]
+          );
+        }
+        
+      }
+    }
+
     await client.query("commit")
 
   } catch (error) {
