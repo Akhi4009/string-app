@@ -63,9 +63,10 @@ const Form = () => {
          />
         </div>
        
- <div className="flex flex-col gap-2 ">
+
     <button type="submit" className="bg-slate-400 p-3 mt-4  rounded-lg ">Signin</button>
- </div>
+ 
+ 
     </form>
     </>
   )

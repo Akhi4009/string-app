@@ -18,9 +18,14 @@ const Form = () => {
         
         e.preventDefault()
 
-        if( password !=confirmPassword ){
+        if( password !== confirmPassword ){
 
-            error.push("Password do not match!")
+            const newError=[]
+            newError.push("Password do not match!")
+            setError(newError)
+           
+            return
+            
         }
 
         const res= await fetch("/api/signup",{
@@ -47,7 +52,7 @@ const Form = () => {
     <hr/>
 </div>
 <div className="flex flex-col gap-2 ">
-    <label className="text-white">Username</label>
+    <label htmlFor="username" className="text-white">Username</label>
     <input  type="text" 
     placeholder="Username"
     id="username"
@@ -59,7 +64,7 @@ const Form = () => {
     />
     </div>
     <div className="flex flex-col gap-2 ">
-        <label className="text-white">Password</label>
+        <label htmlFor="password" className="text-white">Password</label>
         <input type="text"
          placeholder="Password" 
          id="password"
@@ -70,19 +75,23 @@ const Form = () => {
          />
         </div>
         <div className="flex flex-col gap-2 ">
-        <label className="text-white"> Confirm Password</label>
+            
+        <label htmlFor="confirmPassword" className="text-white"> Confirm Password</label>
         <input type="text"
          placeholder="Password" 
-         id="password"
+         id="confirmPassword"
          value={confirmPassword}
          onChange={(e)=>setConfirmPassword(e.target.value)}
          required
          className="text-block p-2 border border-slate-400 rounded-lg"
          />
         </div>
- <div className="flex flex-col gap-2 ">
+ 
     <button type="submit" className="bg-slate-400 p-3 mt-4  rounded-lg ">Signup</button>
- </div>
+
+    {error && error.map(err=>(
+        <div className="text-red-500" key={err}>{err}</div>
+    ))}
     </form>
     </>
   )

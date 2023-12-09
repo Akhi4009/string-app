@@ -12,7 +12,7 @@ export async function POST(request: Request) {
         );
 
         if (res.rowCount !== null && res.rowCount !== undefined && res.rowCount > 0) {
-            return NextResponse.json({ error: "User already exists" });
+            return NextResponse.json({ error: "User already exists" },{status:400});
         }
 
         const salt=10;
