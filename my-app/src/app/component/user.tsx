@@ -16,12 +16,12 @@ const User = ({user,href}:{user:UserI,href?:string}) => {
             className='rounded-full mr-3'/>
             )}
 
-            {!user.avatar && (
+            {!user?.avatar && (
                 <div style={{width:50,height:50}} 
                 className='bg-slate-600 my-3 rounded-full'></div>
             )}
             </div>
-            <div >{user.username}</div>
+            <div >{user?.username}</div>
            
         </Link>
     </div>
