@@ -58,3 +58,4 @@ export async function DELETE(request:Request,
             return NextResponse.json({error:"not found"},{status:404});
         }
     }
+
