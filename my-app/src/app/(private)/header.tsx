@@ -12,7 +12,7 @@ const Header = () => {
   if (error) return <div>Failed to load</div>;
   if(isLoading) return <div>loading...</div> ;
 
-  console.log(data)
+  // console.log(data)
   return (
     <header className='flex flex-row w-full p-5 bg-slate-800 rounded-lg my-2 justify-between items-center text-white'>
       <div>

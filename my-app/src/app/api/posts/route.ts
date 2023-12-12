@@ -32,6 +32,7 @@ export async function POST(request:Request){
 
     const json = await request.json();
     const content=json.content;
+    // console.log(json)
 
     const res = await sql(`insert into posts (user_id, content) values ($1, $2) returning *`,
     [jwtPayload.sub,content]);

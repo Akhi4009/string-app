@@ -1,11 +1,11 @@
 import React from 'react'
 import useSWR from 'swr'
-import Post from './post'
+import Post from '../../component/post'
 
 const FeedList = ({index}:{index:Number}) => {
 
     const {data,error,isLoading} = useSWR(`/api/posts/feed?page=${index}`)
-    console.log(data)
+    // console.log(data)
   return (
     <ul> 
        {data?.data.map((post :PostI)=>{
