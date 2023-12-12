@@ -9,7 +9,7 @@ const FeedList = ({index}:{index:Number}) => {
   return (
     <ul> 
        {data?.data.map((post :PostI)=>{
- return <li className='my-5'><Post post={post}/></li>
+ return <li className='my-5' key={post.id}><Post post={post}/></li>
        })}
     </ul>
   )
