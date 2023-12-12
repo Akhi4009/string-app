@@ -7,7 +7,7 @@ const FollowingContainer = () => {
     const [cnt,setCnt]=useState(1);
     const pages=[]
     for(let i=0;i<cnt;i++){
-        pages.push(<FollowingList index={i}/>)
+        pages.push(<FollowingList key={i} index={i}/>)
     }
   return (
     <div>

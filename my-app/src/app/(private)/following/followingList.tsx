@@ -12,7 +12,7 @@ const followingList = ({index}:{index:number}) => {
   return (
     <ul>
         {followingData.data.map((user:UserI)=>{
-            return <li className='my-5 text-white'>
+            return <li key={user.id} className='my-5 text-white'>
                 <User user={user}/>
             </li>
         })}
