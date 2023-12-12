@@ -20,7 +20,7 @@ const Form = () => {
     if(res.ok){
         
 
-        mutate((key)=> typeof key ==="string" && key.startsWith(`api/posts`))
+        mutate((key)=> typeof key ==="string" && key.startsWith("/api/posts"))
 
         setText('');
         
