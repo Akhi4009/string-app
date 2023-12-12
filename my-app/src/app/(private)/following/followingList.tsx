@@ -2,7 +2,7 @@ import User from '@/app/component/user';
 import React from 'react'
 import useSWR from 'swr'
 
-const followingList = ({index}:{index:number}) => {
+const FollowingList = ({index}:{index:number}) => {
 
     const {data:userData} = useSWR(`/api/users/profile`);
 
@@ -20,4 +20,4 @@ const followingList = ({index}:{index:number}) => {
   )
 }
 
-export default followingList
+export default FollowingList
