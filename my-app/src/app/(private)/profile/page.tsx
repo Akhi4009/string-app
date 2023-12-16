@@ -14,7 +14,7 @@ export default  function Profile(){
     // console.log(data)
     return ( 
         <>
-        <h2 className="text-white">Profile</h2>
+        <h2 >Profile</h2>
         <Form/>
         <PostContainer username={data.data.username}/>
         </>
