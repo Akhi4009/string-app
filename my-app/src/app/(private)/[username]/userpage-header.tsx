@@ -6,6 +6,7 @@ const UserPageHeader = ({username}:{username:string}) => {
   const {data:userData,error:userError,isLoading:userLoading} =useSWR(`/api/users?username=${username}`)
 
   const user=userData?.data[0]
+
   const {data:followData,error:followError,isLoading:followLoading} = useSWR(()=>`/api/follows?user_id=${user.id}`)
 
   if(userError || followError) return <div>...Failed to load</div>
@@ -38,17 +39,17 @@ const UserPageHeader = ({username}:{username:string}) => {
     }
   }
   return (
-    <header>
-        <div>
-            <h1>
+    <header className='w-full bg-slate-500 p-2 rounded-lg flex flex-row justify-between'>
+        
+            <h1 className='text-lg font-bold'>
               {username}
             </h1>
             {followData.data.length > 0 ?(
-              <button onClick={handleUnfollow}>Unfollow</button>
+              <button className='bg-slate-300 rounded-lg p-1' onClick={handleUnfollow}>Unfollow</button>
             ):(
-              <button onClick={handleFollow}>Follow</button>
+              <button className='bg-slate-300 p-1 rounded-lg' onClick={handleFollow}>Follow</button>
             )}
-        </div>
+        
     </header>
   )
 }
