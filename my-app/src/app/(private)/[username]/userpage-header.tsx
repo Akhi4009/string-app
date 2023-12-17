@@ -44,7 +44,7 @@ const UserPageHeader = ({username}:{username:string}) => {
             <h1 className='text-lg font-bold'>
               {username}
             </h1>
-            {followData.data.length > 0 ?(
+            {followData?.data?.length > 0 ?(
               <button className='bg-slate-300 rounded-lg p-1' onClick={handleUnfollow}>Unfollow</button>
             ):(
               <button className='bg-slate-300 p-1 rounded-lg' onClick={handleFollow}>Follow</button>
