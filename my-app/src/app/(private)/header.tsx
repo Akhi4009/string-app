@@ -2,6 +2,8 @@
 import React from 'react'
 import useSWR from 'swr'
 import User from '../component/user'
+import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime'
+import SearchBar from './search-bar'
 
 
 
@@ -14,10 +16,11 @@ const Header = () => {
 
   // console.log(data)
   return (
-    <header className='flex flex-row w-full p-5 bg-slate-800 rounded-lg my-2 justify-between items-center text-white'>
+    <header className='flex flex-row w-full p-5 bg-slate-800 rounded-lg my-2 justify-around items-center text-white'>
       <div>
         <h1 className="font-mono text-lg ">Strings</h1>
       </div>
+    
       <div>
         <User user={data.data} href="account"/>
       </div>

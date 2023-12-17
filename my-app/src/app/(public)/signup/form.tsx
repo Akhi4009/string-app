@@ -43,16 +43,16 @@ const Form = () => {
   return (
     <>
     <form onSubmit={handleSubmit}
-     className="flex flex-col gap-2 p-5 bg-slate-800 max-w-xs w-full rounded-lg">
+     className="flex flex-col gap-2 p-5 bg-slate-800 max-w-xs w-full rounded-lg text-slate-200">
 
 <div  className="text-center">
-    <h3 className="font-semibold text-white">Sign Up</h3>
+    <h3 className="font-semibold ">Sign Up</h3>
 </div>
 <div className="my-3">
     <hr/>
 </div>
 <div className="flex flex-col gap-2 ">
-    <label htmlFor="username" className="text-white">Username</label>
+    <label htmlFor="username" >Username</label>
     <input  type="text" 
     placeholder="Username"
     id="username"
@@ -64,7 +64,7 @@ const Form = () => {
     />
     </div>
     <div className="flex flex-col gap-2 ">
-        <label htmlFor="password" className="text-white">Password</label>
+        <label htmlFor="password">Password</label>
         <input type="text"
          placeholder="Password" 
          id="password"
@@ -76,7 +76,7 @@ const Form = () => {
         </div>
         <div className="flex flex-col gap-2 ">
             
-        <label htmlFor="confirmPassword" className="text-white"> Confirm Password</label>
+        <label htmlFor="confirmPassword" > Confirm Password</label>
         <input type="text"
          placeholder="Password" 
          id="confirmPassword"
@@ -87,7 +87,7 @@ const Form = () => {
          />
         </div>
  
-    <button type="submit" className="bg-slate-400 p-3 mt-4  rounded-lg ">Signup</button>
+    <button type="submit" className="bg-slate-400 p-3 mt-4 text-black  rounded-lg ">Signup</button>
 
     {error && error.map(err=>(
         <div className="text-red-500" key={err}>{err}</div>

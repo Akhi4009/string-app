@@ -7,7 +7,7 @@ const Navbar = () => {
 
   const pathname=usePathname()
   return (
-    <nav className='flex max-w-md w-full p-5 bg-slate-800 rounded-lg my-3 text-white '>
+    <nav className='flex max-w-md w-full p-5 bg-slate-800 rounded-lg my-3 '>
       <ul className='flex flex-row justify-around w-full  '>
         <li>
           <Link href="/feed" className={pathname.startsWith('/feed') ? "text-green-400" : ""} >Feed</Link>

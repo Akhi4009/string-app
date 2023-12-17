@@ -1,5 +1,7 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import * as _ from "lodash"
+import Post from '../component/post'
+import User from '../component/user'
 const SearchBar = () => {
 
    
@@ -24,7 +26,17 @@ const SearchBar = () => {
   return (
     <>
     <input type="text"  onChange={handleChang}
-    className='p-2 bg-slate-700 border-none my-3 rounded-lg text-white'  /></>
+    placeholder='Search by username'
+    className='p-2 bg-slate-200 border-none my-3 rounded-lg text-blue'  />
+<ul>
+    {searchresult && searchresult.map((user:UserI)=>(
+      <li key={user.id} className='m-2'>
+        <User user={user}/>
+      </li>
+    ))}
+    </ul>
+    
+    </>
   )
 }
 
