@@ -2,8 +2,7 @@
 import React from 'react'
 import useSWR from 'swr'
 import User from '../component/user'
-import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime'
-import SearchBar from './search-bar'
+
 
 
 

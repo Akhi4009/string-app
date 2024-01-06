@@ -1,6 +1,6 @@
 "use client"
 
-import useSWR, { useSWRConfig } from "swr";
+import useSWR from "swr";
 import Form from "./form";
 import PostContainer from "@/app/component/postContainer";
 

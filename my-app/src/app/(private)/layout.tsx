@@ -18,25 +18,20 @@ export default function PrivateLayout(
                 <div className='sticky top-0 left-0 z-50'>
                 <Header/>
                 </div>
-                
-           
-          
-                
-                  
-            <div className='flex flex-col min-h-screen max-w-md  justify-center m-auto text-slate-400'>
-                 
-                
+                <div className='flex flex-col min-h-screen max-w-md  justify-center m-auto text-slate-400'>
                 <Navbar/>
                 <SearchBar/> 
                 <main className='w-full p-5 bg-slate-800 rounded-lg my-2'>{children}</main>
                 <Footer/>
             </div>
+            </SWRConfig>
+         )
+    }
+                 
+                
             
            
     
                 
                 
           
-            </SWRConfig>
-         )
-    }

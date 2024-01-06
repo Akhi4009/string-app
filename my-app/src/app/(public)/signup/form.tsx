@@ -15,7 +15,6 @@ const Form = () => {
     const [error,setError]=useState<string[]>([])
 
     const handleSubmit=async(e:FormEvent)=>{
-        
         e.preventDefault()
 
         if( password !== confirmPassword ){

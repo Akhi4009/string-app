@@ -8,9 +8,7 @@ export async function getJWTpayload(){
     const secret = new TextEncoder().encode(process.env.JWT_SECRET!);
     const {payload,protectedHeader} = await jwtVerify(token?.value!,secret)
 
-   
-
-    return payload
+return payload
 }
 
 
